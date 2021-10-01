@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import GlobalStyles from "../GlobalStyle.js"
+
 import * as S from "./style.js"
+import GlobalStyles from "./GlobalStyle.js"
 import { api } from '../../services/api'
+
 
 
 export function Main(){
@@ -15,16 +17,20 @@ export function Main(){
     }, [])
 
     return(
-        <div>
+        <S.Container>
             <GlobalStyles/>
-            {list.map((item,index) => (
-                <div key={index}>
-                    <ul>
-                        <img src={item.image} alt=""/>
-                        <li>{item.name}</li>
-                    </ul>
-                </div>
-            ))}
-        </div>
+            <S.ScrowBox>
+                {list.map((item,index) => (
+                    <div key={index}>
+                        <ul>
+                            <S.BGcontainer>
+                                <S.ScrowItens src={item.image} alt=""/>
+                                <li>{item.name}</li>
+                            </S.BGcontainer>
+                        </ul>
+                    </div>
+                ))}
+            </S.ScrowBox>
+        </S.Container>
     )
 }

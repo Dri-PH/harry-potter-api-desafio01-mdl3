@@ -1,20 +1,27 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import GlobalStyles from "../GlobalStyle.js"
 import * as S from "./style.js"
+import GlobalStyles from "./GlobalStyle.js"
+
 
 
 export function Header(){
     return(
         <S.Container>
-            <GlobalStyles/>
-            <nav>
+            <GlobalStyles />
+            <S.NavigationBar>
                 <ul>
-                    <Link to="/Main">Inicio</Link>
-                    <Link to="/Sobre">Sobre</Link>
-                    <Link to="/Footer">Contatos</Link>
+                    <li>
+                        <Link to="#">Inicio</Link>
+                    </li>
+                    <li>
+                        <Link to="/Sobre">Sobre</Link>
+                    </li>
+                    <li>
+                        <Link to="#">Contatos</Link>
+                    </li>
                 </ul>
-            </nav>
+            </S.NavigationBar>
         </S.Container>
     )
 }
